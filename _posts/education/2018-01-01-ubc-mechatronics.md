@@ -5,9 +5,8 @@ category: Education
 title: Bachelors of Applied Science in Mechanical Engineering (Mechatronics Option) and Minor in Commerce
 company: University of British Columbia (Vancouver, Canada)
 
-start_date: May, 2017
-end_date: Aug, 2017
-duration: 4 months
+start_date: Sep, 2012
+end_date: Dec, 2017
 
 feature_img: /assets/img/bosch_renningen.jpg
 ---

@@ -375,5 +375,24 @@ main {
 	//border-radius: 0.5em;
 	margin-right: 1em;
 	background-image: url(/assets/img/me.jpg);
-	z-index: -1;
+}
+
+.skill-text {
+	display: inline-block;
+	background-color: $orange;
+	color: #fff;
+	border-radius: 0.5em;
+
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+
+	margin-right: 0em;
+	margin-bottom: 0.15em;
+	margin-top: 0.15em;
+}
+
+.skill-type {
+	margin-bottom: 0.5em;
 }

@@ -26,9 +26,8 @@ category_array:
 				</div>	
 
 				<div class="home-content" ;">
-					<p class="category-text">Skills</p>
-					<hr class="category-line">
-
+					
+					
 					{% for category in layout.category_array %}
 					<p class="category-text">{{ category }}</p>
 					<hr class="category-line">
@@ -37,11 +36,22 @@ category_array:
 	    				<a href="{{ post.url | absolute_url }}" class="category-content">
     						<p style="vertical-align: middle; display: inline; width: 100%; margin-bottom: 0.5em; color: #fff; height: 100%">{{ post.title }}</p>
     						<p style="font-size: 0.75em; margin-bottom: 0; color: #fff; opacity: 0.85;">{{ post.company }}</p>
-    						<p style="font-size: 0.75em; margin-top: 0.2em; color: #fff; opacity: 0.85;">From {{ post.start_date }} to {{ post.end_date }} ({{ post.duration }})</p>
+    						<p style="font-size: 0.75em; margin-top: 0.2em; color: #fff; opacity: 0.85;">From {{ post.start_date }} to {{ post.end_date }} {% if post.duration %}({{ post.duration }}){% endif %}</p>
 	    				</a>
 						{% endfor %}
 					</div>
-					{% endfor %}					
+					{% endfor %}
+
+					<p class="category-text">Skills</p>
+					<hr class="category-line">
+					{% for skill_type in page.skills_list %}
+						<p class="skill-type">{{ skill_type.type }}</p>
+						<div style="margin-left: 1em">
+						{% for skill in skill_type.skills %}
+							<p class="skill-text">{{skill}}</p>
+						{% endfor %}
+						</div>
+					{% endfor %}				
 				</div>			
 			</div>			
 		</main>		
