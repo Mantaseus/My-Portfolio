@@ -1,0 +1,379 @@
+---
+---
+
+@charset "utf-8";
+
+// Constants
+$content-margin-left: 9em;
+$content-top-margin-right: 40%;
+
+$tablet-width: 50em;
+$mobile-width: 30em;
+
+$bg-color: #f8f8f8;
+
+$orange: #ff9900;
+$orange-dark: #b46c00;
+$blue: #46cdef;
+$blue-dark: #51a5ba;
+$green: #01a97b;
+$green-dark: #097054;
+$red: #bc494a;
+$red-dark: #9a3334;
+
+// Mixins
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+// This can be used as a kind of if statement. But this only really applies to these specific cases
+@mixin if-screen-width-below($val) {
+  @media screen and (max-width: $val) {
+    @content;
+  }
+}
+@mixin if-screen-width-above($val) {
+  @media screen and (min-width: $val) {
+    @content;
+  }
+}
+@mixin if-screen-width-between($val1, $val2) {
+  @media screen and (max-width: $val1) and (min-width: $val2) {
+    @content;
+  }
+}
+
+@mixin fixed-width($val){
+	max-width: $val;
+	min-width: $val;
+}
+@mixin fixed-height($val){
+	max-height: $val;
+	min-height: $val;
+}
+
+// Animations
+@keyframes fade-in-right {
+    from {opacity: 0; width: 10%}
+    to {opacity: 1; width: 25%}
+}
+
+@keyframes fade-in-down {
+    from {opacity: 0; height: 10em}
+    to {opacity: 1; height: 20em}
+}
+
+// General extendables
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+// Style Defintions
+main {
+	height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	background: $bg-color;
+
+	@include if-screen-width-below($tablet-width){
+		flex-direction: column;
+		height: auto;
+	}
+}
+
+.full-height {
+	height: 100%;
+
+	@include if-screen-width-below($tablet-width){
+		height: auto;
+	}
+}
+
+.info-container {
+	width: 25%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@include if-screen-width-below($tablet-width){
+		flex-direction: column;
+		width: 100%;
+		height: 20em;
+		animation-name: fade-in-down;
+    	animation-duration: 0.5s;
+    	animation-timing-function:ease-out;
+	}
+}
+
+.content-container {
+	width: 75%;
+	height: 100%;
+
+	// To handle any vertical overflow of content
+	overflow-y: scroll;
+
+	@include if-screen-width-below($tablet-width){
+		width: 100%;
+		height: auto;
+		overflow-y: visible;
+	}
+}
+
+.job-title {
+	font-family: Segoe UI Light, sans-serif;
+	font-size: 3em;
+	margin-left: calc(#{$content-margin-left} / 3);
+	margin-right: 25%;
+	margin-bottom: 0.75em;
+
+	@include if-screen-width-below($tablet-width){
+		font-size: 3em;
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+
+	@include if-screen-width-below($mobile-width){
+		font-size: 2em;
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+}
+
+.job-meta {
+	font-family: Segoe UI, sans-serif;
+	margin: 0;
+	margin-left: $content-margin-left;
+	margin-right: 25%;
+	margin-bottom: 0.5em;
+	color: #888;
+
+	@include if-screen-width-below($tablet-width){
+		margin-left: 4.5em;
+		margin-right: 4.5em;
+	}
+
+	@include if-screen-width-below($mobile-width){
+		margin-left: 2.4em;
+		margin-right: 2.4em;
+		font-size: 0.8em;
+	}
+}
+
+.content-text {
+	font-family: Segoe UI, sans-serif;
+	font-size: 1em;
+	margin-top: 2.25em;
+	margin-left: $content-margin-left;
+	margin-right: 25%;
+	margin-bottom: 10em;
+
+	@include if-screen-width-below($tablet-width){
+		margin-left: 4.5em;
+		margin-right: 4.5em;
+	}
+
+	@include if-screen-width-below($mobile-width){
+		margin-left: 2.4em;
+		margin-right: 2.4em;
+		font-size: 0.8em;
+	}
+}
+
+// HOME page --------------------------------------------------------------------------------------
+
+.home-feature {
+	width: 25%;
+	height: 100%;
+	background-size: cover;
+	background-position: left 100% center;
+	background-repeat: no-repeat;
+	background-image: url(/assets/img/generic_feature_img_left.png);
+
+	@include if-screen-width-below($tablet-width){
+		flex-direction: column;
+		width: 100%;
+		height: 20em;
+		animation-name: fade-in-down;
+    	animation-duration: 0.5s;
+    	animation-timing-function:ease-out;
+		background-image: url(/assets/img/generic_feature_img_top.png);
+		background-position: top 100% center;
+	}
+}
+
+.person-info-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: auto;
+
+	margin-top: 3em;
+
+	@include if-screen-width-below($tablet-width){
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1em;
+	}
+}
+
+.person-image {
+	@include fixed-width(7.5em);
+	@include fixed-height(7.5em);
+	background-image: url(/assets/img/me.jpg);
+	border-radius: 0.5em;
+	background-size: cover;
+	margin-left: 9em;
+
+	@include if-screen-width-below($tablet-width){
+		@include fixed-width(5em);
+		@include fixed-height(5em);
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1em;
+	}
+}
+
+.person-name {
+	font-family: Segoe UI Light, sans-serif;
+	font-size: 3em;
+	margin-left: 1em;
+	margin-right: 25%;
+	margin-bottom: 0.25em;
+	margin-top: 0;
+
+	@include if-screen-width-below($tablet-width){
+		font-size: 2.5em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	@include if-screen-width-below($mobile-width){
+		font-size: 2em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+}
+
+.person-extra {
+	font-family: Segoe UI, sans-serif;
+	margin: 0;
+	margin-left: 3em;
+	margin-right: 25%;
+	margin-bottom: 0.5em;
+	color: #888;
+
+	@include if-screen-width-below($tablet-width){
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	@include if-screen-width-below($mobile-width){
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-size: 0.8em;
+	}
+}
+
+.home-content {
+	font-family: Segoe UI, sans-serif;
+	font-size: 1em;
+	margin-top: 5em;
+	margin-left: $content-margin-left;
+	margin-right: 25%;
+	margin-bottom: 10em;
+
+	@include if-screen-width-below($tablet-width){
+		margin-left: 4.5em;
+		margin-right: 4.5em;
+	}
+
+	@include if-screen-width-below($mobile-width){
+		margin-left: 2.4em;
+		margin-right: 2.4em;
+		font-size: 0.8em;
+	}
+}
+
+.category-text {
+	font-size: 1.5em; 
+	margin-bottom: 0.4em;
+	text-transform: uppercase;
+	color: #666;
+
+	@include if-screen-width-below($tablet-width){
+		text-align: center;
+	}
+}
+
+.category-line {
+	margin-bottom: 1.5em;
+}
+
+.category-content-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	overflow: hidden;
+
+	@include if-screen-width-below($tablet-width){
+		width: 100%;
+	}	
+}
+
+.category-content {
+	@include fixed-width(18em);
+
+	border-width: 0px 0px 5px 0px;
+	border-style: solid;
+	border-radius: 0.5em;
+	border-color: $green-dark;
+	background-color: $green;
+
+	text-decoration: none;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-right: 1em;
+	margin-bottom: 1em;
+
+	padding-left: 1em;
+	padding-right: 1em;
+
+	&:hover {
+		border-width: 0px 0px 3px 0px;
+		margin-top: 2px;
+	}
+
+	&:active {
+		border-width: 0px 0px 0px 0px;
+		margin-top: 5px;
+	}
+
+	@include if-screen-width-below($tablet-width){
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.category-content-image {
+	@include fixed-width(5em);
+	@include fixed-height(5em);
+	background-color: #999;
+	//border-radius: 0.5em;
+	margin-right: 1em;
+	background-image: url(/assets/img/me.jpg);
+	z-index: -1;
+}

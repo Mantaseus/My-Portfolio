@@ -1,0 +1,49 @@
+---
+category_array:
+  - Education
+  - Co-op Jobs
+  - Academic Projects
+  - Personal Projects
+---
+
+<!DOCTYPE html>
+
+<html class="full-height">
+	<!-- can include the head stuff here to define meta stuff about the page-->
+	{% include head.html %}
+	
+	<body style="margin: 0" class="full-height">
+		<!-- can include any header stuff here -->
+		<main>
+			<div class="home-feature"></div>
+			<div class="content-container">
+				<div class="person-info-container">					
+					<div class="person-image"></div>
+					<div style="width: 100%">
+						<p class="person-name">{{ page.person }}</p>
+						<p class="person-extra"><b>E-mail</b>: {{ page.email }}</p>
+					</div>					
+				</div>	
+
+				<div class="home-content" ;">
+					<p class="category-text">Skills</p>
+					<hr class="category-line">
+
+					{% for category in layout.category_array %}
+					<p class="category-text">{{ category }}</p>
+					<hr class="category-line">
+					<div class="category-content-container">
+						{% for post in site.categories[category] %}
+	    				<a href="{{ post.url | absolute_url }}" class="category-content">
+    						<p style="vertical-align: middle; display: inline; width: 100%; margin-bottom: 0.5em; color: #fff; height: 100%">{{ post.title }}</p>
+    						<p style="font-size: 0.75em; margin-bottom: 0; color: #fff; opacity: 0.85;">{{ post.company }}</p>
+    						<p style="font-size: 0.75em; margin-top: 0.2em; color: #fff; opacity: 0.85;">From {{ post.start_date }} to {{ post.end_date }} ({{ post.duration }})</p>
+	    				</a>
+						{% endfor %}
+					</div>
+					{% endfor %}					
+				</div>			
+			</div>			
+		</main>		
+	</body>
+</html>

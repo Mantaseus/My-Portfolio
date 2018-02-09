@@ -1,0 +1,273 @@
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    width: 10%; }
+  to {
+    opacity: 1;
+    width: 25%; } }
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    height: 10em; }
+  to {
+    opacity: 1;
+    height: 20em; } }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+main {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background: #f8f8f8; }
+  @media screen and (max-width: 50em) {
+    main {
+      flex-direction: column;
+      height: auto; } }
+
+.full-height {
+  height: 100%; }
+  @media screen and (max-width: 50em) {
+    .full-height {
+      height: auto; } }
+
+.info-container {
+  width: 25%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  @media screen and (max-width: 50em) {
+    .info-container {
+      flex-direction: column;
+      width: 100%;
+      height: 20em;
+      animation-name: fade-in-down;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out; } }
+
+.content-container {
+  width: 75%;
+  height: 100%;
+  overflow-y: scroll; }
+  @media screen and (max-width: 50em) {
+    .content-container {
+      width: 100%;
+      height: auto;
+      overflow-y: visible; } }
+
+.job-title {
+  font-family: Segoe UI Light, sans-serif;
+  font-size: 3em;
+  margin-left: calc(9em / 3);
+  margin-right: 25%;
+  margin-bottom: 0.75em; }
+  @media screen and (max-width: 50em) {
+    .job-title {
+      font-size: 3em;
+      margin-left: 1.5em;
+      margin-right: 1.5em; } }
+  @media screen and (max-width: 30em) {
+    .job-title {
+      font-size: 2em;
+      margin-left: 1em;
+      margin-right: 1em; } }
+
+.job-meta {
+  font-family: Segoe UI, sans-serif;
+  margin: 0;
+  margin-left: 9em;
+  margin-right: 25%;
+  margin-bottom: 0.5em;
+  color: #888; }
+  @media screen and (max-width: 50em) {
+    .job-meta {
+      margin-left: 4.5em;
+      margin-right: 4.5em; } }
+  @media screen and (max-width: 30em) {
+    .job-meta {
+      margin-left: 2.4em;
+      margin-right: 2.4em;
+      font-size: 0.8em; } }
+
+.content-text {
+  font-family: Segoe UI, sans-serif;
+  font-size: 1em;
+  margin-top: 2.25em;
+  margin-left: 9em;
+  margin-right: 25%;
+  margin-bottom: 10em; }
+  @media screen and (max-width: 50em) {
+    .content-text {
+      margin-left: 4.5em;
+      margin-right: 4.5em; } }
+  @media screen and (max-width: 30em) {
+    .content-text {
+      margin-left: 2.4em;
+      margin-right: 2.4em;
+      font-size: 0.8em; } }
+
+.home-feature {
+  width: 25%;
+  height: 100%;
+  background-size: cover;
+  background-position: left 100% center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/generic_feature_img_left.png); }
+  @media screen and (max-width: 50em) {
+    .home-feature {
+      flex-direction: column;
+      width: 100%;
+      height: 20em;
+      animation-name: fade-in-down;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      background-image: url(/assets/img/generic_feature_img_top.png);
+      background-position: top 100% center; } }
+
+.person-info-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto;
+  margin-top: 3em; }
+  @media screen and (max-width: 50em) {
+    .person-info-container {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em; } }
+
+.person-image {
+  max-width: 7.5em;
+  min-width: 7.5em;
+  max-height: 7.5em;
+  min-height: 7.5em;
+  background-image: url(/assets/img/me.jpg);
+  border-radius: 0.5em;
+  background-size: cover;
+  margin-left: 9em; }
+  @media screen and (max-width: 50em) {
+    .person-image {
+      max-width: 5em;
+      min-width: 5em;
+      max-height: 5em;
+      min-height: 5em;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1em; } }
+
+.person-name {
+  font-family: Segoe UI Light, sans-serif;
+  font-size: 3em;
+  margin-left: 1em;
+  margin-right: 25%;
+  margin-bottom: 0.25em;
+  margin-top: 0; }
+  @media screen and (max-width: 50em) {
+    .person-name {
+      font-size: 2.5em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; } }
+  @media screen and (max-width: 30em) {
+    .person-name {
+      font-size: 2em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; } }
+
+.person-extra {
+  font-family: Segoe UI, sans-serif;
+  margin: 0;
+  margin-left: 3em;
+  margin-right: 25%;
+  margin-bottom: 0.5em;
+  color: #888; }
+  @media screen and (max-width: 50em) {
+    .person-extra {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; } }
+  @media screen and (max-width: 30em) {
+    .person-extra {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 0.8em; } }
+
+.home-content {
+  font-family: Segoe UI, sans-serif;
+  font-size: 1em;
+  margin-top: 5em;
+  margin-left: 9em;
+  margin-right: 25%;
+  margin-bottom: 10em; }
+  @media screen and (max-width: 50em) {
+    .home-content {
+      margin-left: 4.5em;
+      margin-right: 4.5em; } }
+  @media screen and (max-width: 30em) {
+    .home-content {
+      margin-left: 2.4em;
+      margin-right: 2.4em;
+      font-size: 0.8em; } }
+
+.category-text {
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
+  text-transform: uppercase;
+  color: #666; }
+  @media screen and (max-width: 50em) {
+    .category-text {
+      text-align: center; } }
+
+.category-line {
+  margin-bottom: 1.5em; }
+
+.category-content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden; }
+  @media screen and (max-width: 50em) {
+    .category-content-container {
+      width: 100%; } }
+
+.category-content {
+  max-width: 18em;
+  min-width: 18em;
+  border-width: 0px 0px 5px 0px;
+  border-style: solid;
+  border-radius: 0.5em;
+  border-color: #097054;
+  background-color: #01a97b;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em; }
+  .category-content:hover {
+    border-width: 0px 0px 3px 0px;
+    margin-top: 2px; }
+  .category-content:active {
+    border-width: 0px 0px 0px 0px;
+    margin-top: 5px; }
+  @media screen and (max-width: 50em) {
+    .category-content {
+      margin-right: auto;
+      margin-left: auto; } }
+
+.category-content-image {
+  max-width: 5em;
+  min-width: 5em;
+  max-height: 5em;
+  min-height: 5em;
+  background-color: #999;
+  margin-right: 1em;
+  background-image: url(/assets/img/me.jpg);
+  z-index: -1; }

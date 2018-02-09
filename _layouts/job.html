@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html class="full-height">
+	<!-- can include the head stuff here to define meta stuff about the page-->
+	{% include head.html %}
+	
+	<body style="margin: 0" class="full-height">
+		<!-- can include any header stuff here -->
+		<main>
+			<div class="info-container" style="background-image: url({{ page.feature_img }})"></div>
+			<div class="content-container">
+				<p class="job-title">{{ page.title }}</p>
+
+				<p class="job-meta">At {{ page.company }}</p>
+				<p class="job-meta"> From {{ page.start_date }} to {{ page.end_date }} ({{ page.duration }})</p>
+
+				<div class="content-text" ;">
+					{{ content }}	
+				</div>			
+			</div>			
+		</main>		
+	</body>
+</html>
