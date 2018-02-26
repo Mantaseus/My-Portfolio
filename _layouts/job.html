@@ -1,18 +1,66 @@
 <!DOCTYPE html>
 
 <html class="full-height">
-	<!-- can include the head stuff here to define meta stuff about the page-->
-	{% include head.html %}
+	<head>		
+		{% include head.html %}
+
+		<style type="text/css">
+			.content-feature {
+				width: 25%;
+				height: 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-image: url({{ page.feature_img }});
+
+				{% if page.feature_from_left == true %}
+					background-position: left 100% center;
+					animation-name: fade-in-left;
+				{% else %}					
+					background-position: right 100% center;
+					animation-name: fade-in-right;
+				{% endif %}
+
+				animation-duration: 0.5s;
+				animation-timing-function:ease-out;				
+			}
+
+			@media screen and (max-width: 50em) {
+				.content-feature{
+					flex-direction: column;
+					width: 100%;
+					height: 20em;
+
+					{% if page.feature_img_tablet %}
+						background-image: url({{ page.feature_img_tablet }});						
+					{% endif %}					
+
+					{% if page.feature_from_top == true %}
+						background-position: top 100% center;
+						animation-name: fade-in-down;
+					{% else %}
+						background-position: bottom 100% center;
+						animation-name: fade-in-down;
+					{% endif %}
+				}
+			}
+		</style>
+	</head>
 	
 	<body style="margin: 0" class="full-height">
-		<!-- can include any header stuff here -->
 		<main>
-			<div class="info-container" style="background-image: url({{ page.feature_img }})"></div>
+			<div class="content-feature"></div>
+
+			<!-- {% if page.feature_from_left == true %}
+			<div class="content-feature-left" style="background-image: url({{ page.feature_img }})"></div>
+			{% else %}
+			<div class="content-feature-right" style="background-image: url({{ page.feature_img }})"></div>
+			{% endif %} -->
+
 			<div class="content-container">
 				<p class="job-title">{{ page.title }}</p>
 
-				<p class="job-meta">At {{ page.company }}</p>
-				<p class="job-meta"> From {{ page.start_date }} to {{ page.end_date }} ({{ page.duration }})</p>
+				{% if page.company %}<p class="job-meta">At {{ page.company }}</p>{% endif %}
+				<p class="job-meta"> From {{ page.start_date }} to {{ page.end_date }} {% if page.duration %}({{ page.duration }}){% endif %}</p>
 
 				<div class="content-text" ;">
 					{{ content }}	

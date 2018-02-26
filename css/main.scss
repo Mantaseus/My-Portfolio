@@ -58,8 +58,13 @@ $red-dark: #9a3334;
 
 // Animations
 @keyframes fade-in-right {
-    from {opacity: 0; width: 10%}
-    to {opacity: 1; width: 25%}
+    from {opacity: 0; background-position: right 50% center;}
+    to {opacity: 1; background-position: right 100% center;}
+}
+
+@keyframes fade-in-left {
+    from {opacity: 0; background-position: left 200% center;}
+    to {opacity: 1; background-position: left 100% center;}
 }
 
 @keyframes fade-in-down {
@@ -96,11 +101,16 @@ main {
 	}
 }
 
-.info-container {
+.content-feature-left {
 	width: 25%;
 	height: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: left 100% center;
+
+	animation-name: fade-in-left;
+	animation-duration: 0.5s;
+	animation-timing-function:ease-out;
 
 	@include if-screen-width-below($tablet-width){
 		flex-direction: column;
@@ -109,6 +119,29 @@ main {
 		animation-name: fade-in-down;
     	animation-duration: 0.5s;
     	animation-timing-function:ease-out;
+		background-position: bottom 100% center;
+	}
+}
+
+.content-feature-right {
+	width: 25%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;	
+	background-position: right 100% center;
+
+	animation-name: fade-in-right;
+	animation-duration: 0.5s;
+	animation-timing-function:ease-out;
+
+	@include if-screen-width-below($tablet-width){
+		flex-direction: column;
+		width: 100%;
+		height: 20em;
+		animation-name: fade-in-down;
+    	animation-duration: 0.5s;
+    	animation-timing-function:ease-out;
+		background-position: bottom 100% center;
 	}
 }
 
@@ -174,6 +207,11 @@ main {
 	margin-right: 25%;
 	margin-bottom: 10em;
 
+	& a {
+		text-decoration: none;
+		color: #00afe2;
+	}
+
 	@include if-screen-width-below($tablet-width){
 		margin-left: 4.5em;
 		margin-right: 4.5em;
@@ -186,6 +224,32 @@ main {
 	}
 }
 
+.content-img {
+	display: block;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 1.5em; 
+
+	@include if-screen-width-below($mobile-width){
+		width: 100% !important;
+		margin: 0;
+	}
+}
+
+.content-img-figure {	
+	@include if-screen-width-below($mobile-width){
+		margin: 0;
+	}
+}
+
+.content-img-caption {
+	text-align: center; 
+	color: #888; 
+	font-style: italic; 
+	margin-bottom: 1.5em;
+	margin-top: 1em;
+}
+
 // HOME page --------------------------------------------------------------------------------------
 
 .home-feature {
@@ -194,16 +258,18 @@ main {
 	background-size: cover;
 	background-position: left 100% center;
 	background-repeat: no-repeat;
-	background-image: url(/assets/img/generic_feature_img_left.png);
+	background-image: url(/assets/feature-img/generic_feature_img_left.png);
+
+	animation-name: fade-in-left;
+	animation-duration: 0.5s;
+	animation-timing-function:ease-out;
 
 	@include if-screen-width-below($tablet-width){
 		flex-direction: column;
 		width: 100%;
 		height: 20em;
 		animation-name: fade-in-down;
-    	animation-duration: 0.5s;
-    	animation-timing-function:ease-out;
-		background-image: url(/assets/img/generic_feature_img_top.png);
+		background-image: url(/assets/feature-img/generic_feature_img_top.png);
 		background-position: top 100% center;
 	}
 }
@@ -227,10 +293,11 @@ main {
 .person-image {
 	@include fixed-width(7.5em);
 	@include fixed-height(7.5em);
-	background-image: url(/assets/img/me.jpg);
+	background-image: url(/assets/me.jpg);
 	border-radius: 0.5em;
 	background-size: cover;
 	margin-left: 9em;
+	margin-top: 1em;
 
 	@include if-screen-width-below($tablet-width){
 		@include fixed-width(5em);
@@ -328,12 +395,13 @@ main {
 	overflow: hidden;
 
 	@include if-screen-width-below($tablet-width){
-		width: 100%;
+		width: auto;
 	}	
 }
 
 .category-content {
-	@include fixed-width(18em);
+	//@include fixed-width(18em);
+	max-width: 18em;
 
 	border-width: 0px 0px 5px 0px;
 	border-style: solid;
@@ -368,15 +436,6 @@ main {
 	}
 }
 
-.category-content-image {
-	@include fixed-width(5em);
-	@include fixed-height(5em);
-	background-color: #999;
-	//border-radius: 0.5em;
-	margin-right: 1em;
-	background-image: url(/assets/img/me.jpg);
-}
-
 .skill-text {
 	display: inline-block;
 	background-color: $orange;
@@ -395,4 +454,20 @@ main {
 
 .skill-type {
 	margin-bottom: 0.5em;
+}
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+
+	& iframe {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
 }

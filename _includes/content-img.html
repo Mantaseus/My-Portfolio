@@ -1,0 +1,4 @@
+<figure class="content-img-figure">
+	<img src="{{ include.url }}" alt="{{ include.caption }}" class="content-img" style="width: {% if include.width %}{{ include.width }}{% else %}100%{% endif %};">
+	<figcaption class="content-img-caption">Figure {{ include.num }}: {{ include.caption }}</figcaption>
+</figure>

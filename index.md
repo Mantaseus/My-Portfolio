@@ -3,11 +3,13 @@ layout: home
 
 person: Satnam Singh Brar
 email: brar.satnam1995@gmail.com
+title: Mechatronics Engineer
 
-feature_img: /assets/img/generic_feature_img.png
+feature_img: /assets/feature-img/generic_feature_img.png 
 
 skills_list:
   - type: Programming Languages
+    color: '#ff9900'
     skills: 
     - C
     - C++
@@ -22,6 +24,7 @@ skills_list:
     - Assembly Language
     - Shell scripting
   - type: Software
+    color: '#ff9900'
     skills:
     - MatLab
     - Simulink
@@ -32,12 +35,14 @@ skills_list:
     - Adobe Photoshop
     - Linux
   - type: Electrical Hardware
+    color: '#ff9900'
     skills:
     - Embedded systems
     - Electric circuit design
     - PCB design
     - PCB and prototype circuit assembly
   - type: Mechatronics/Controls Engineering
+    color: '#ff9900'
     skills:
     - Mechanical and Electrical system modeling
     - Controller Design
