@@ -1,10 +1,6 @@
 # Site settings
 title: My Portfolio
-url: "http://kopfenheim.com" # The base hostname & protocol for your site. Use it if you need absolute URL's
-
-# Contact
-phone: "916-276-1044" # This is my real number. You should text me.
-email: "hello@garrettboatman.com" # This is my real email address. Please don't email me.
+baseurl: "My-Portfolio"
 
 sass:
   sass_dir: ./css
