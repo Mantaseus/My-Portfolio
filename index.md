@@ -1,10 +1,11 @@
 ---
 layout: home
+title: Home
 
-person: Satnam Singh Brar
-email: brar.satnam1995@gmail.com
-title: Mechatronics Engineer
-person_img: /assets/me.jpg
+my_name: Satnam Singh Brar
+my_email: brar.satnam1995@gmail.com
+my_title: Mechatronics Engineer
+my_img: /assets/me.jpg
 
 feature_img: /assets/feature-img/generic_feature_img_left.png 
 feature_from_left: true
