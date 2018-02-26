@@ -4,8 +4,13 @@ layout: home
 person: Satnam Singh Brar
 email: brar.satnam1995@gmail.com
 title: Mechatronics Engineer
+person_img: /assets/me.jpg
 
-feature_img: /assets/feature-img/generic_feature_img.png 
+feature_img: /assets/feature-img/generic_feature_img_left.png 
+feature_from_left: true
+feature_img_tablet: /assets/feature-img/generic_feature_img_top.png
+feature_from_top: true
+
 
 skills_list:
   - type: Programming Languages

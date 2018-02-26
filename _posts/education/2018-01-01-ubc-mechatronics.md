@@ -23,7 +23,7 @@ home_color_dark: '#51a5ba'
 
 ***
 
-My education within this degree has allowed me to gain immense experience with various concepts related to Mechanical, Electrical, Software and Controls engineering. Through UBCs coop program I also gained vital real-world experience as I was able to work as a [field engineer]({% post_url coop/2015-01-01-bantrel-constructors %}), [semiconductors research intern]({% post_url coop/2016-09-01-robert-bosch-gmbh %}), and a [software development intern]({% post_url coop/2017-09-01-sytek %}). The [capstone project]({% post_url academic_projects/2017-04-01-flexoline-braiding-machine %}) also provided me with invaluable experience where we worked for real clients to solve their engineering needs.
+My education within this degree has allowed me to gain immense experience with various concepts related to Mechanical, Electrical, Software and Controls engineering. Through UBCs coop program I also gained vital real-world experience as I was able to work as a [field engineer]({{ site.baseurl }}{% post_url coop/2015-01-01-bantrel-constructors %}), [semiconductors research intern]({{ site.baseurl }}{% post_url coop/2016-09-01-robert-bosch-gmbh %}), and a [software development intern]({{ site.baseurl }}{% post_url coop/2017-09-01-sytek %}). The [capstone project]({{ site.baseurl }}{% post_url academic_projects/2017-04-01-flexoline-braiding-machine %}) also provided me with invaluable experience where we worked for real clients to solve their engineering needs.
 
 ### First Year - General Applied Science
 At UBC, all the first year Engineering students take the same courses and build the same foundations in engineering. We were taught 
@@ -79,7 +79,7 @@ We also continued to develop our knowledge of:
 * Operation and selection of various mechanical devices such as springs, gears, belts, roller chains, bearings, threaded fasteners, etc.
 
 ### Fourth Year - Mechatronics and Capstone
-In my fourth year, all of my courses were entirely dedicated to mechatronics and the [capstone project]({% post_url academic_projects/2017-04-01-flexoline-braiding-machine %}). We learned various new concepts such as:
+In my fourth year, all of my courses were entirely dedicated to mechatronics and the [capstone project]({{ site.baseurl }}{% post_url academic_projects/2017-04-01-flexoline-braiding-machine %}). We learned various new concepts such as:
 * Concurrent system design (parallel programming) and Real-Time programming
 * Software modeling and planning using UML
 * Basics of operation and usage of sensors and actuators (piezoelectric devices, LVDT, electrostatic actuators, temperature sensors, etc.)

@@ -5,12 +5,12 @@
 		{% include head.html %}
 
 		<style type="text/css">
-			.content-feature {
+			.feature-img {
 				width: 25%;
 				height: 100%;
 				background-size: cover;
 				background-repeat: no-repeat;
-				background-image: url({{ page.feature_img }});
+				background-image: url({{ site.baseurl }}{{ page.feature_img }});
 
 				{% if page.feature_from_left == true %}
 					background-position: left 100% center;
@@ -25,13 +25,13 @@
 			}
 
 			@media screen and (max-width: 50em) {
-				.content-feature{
+				.feature-img {
 					flex-direction: column;
 					width: 100%;
 					height: 20em;
 
 					{% if page.feature_img_tablet %}
-						background-image: url({{ page.feature_img_tablet }});						
+						background-image: url({{ site.baseurl }}{{ page.feature_img_tablet }});						
 					{% endif %}					
 
 					{% if page.feature_from_top == true %}
@@ -48,13 +48,7 @@
 	
 	<body style="margin: 0" class="full-height">
 		<main>
-			<div class="content-feature"></div>
-
-			<!-- {% if page.feature_from_left == true %}
-			<div class="content-feature-left" style="background-image: url({{ page.feature_img }})"></div>
-			{% else %}
-			<div class="content-feature-right" style="background-image: url({{ page.feature_img }})"></div>
-			{% endif %} -->
+			<div class="feature-img"></div>
 
 			<div class="content-container">
 				<p class="job-title">{{ page.title }}</p>

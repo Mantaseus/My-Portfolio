@@ -1,5 +1,7 @@
 # Site settings
 title: My Portfolio
+url: ""
+baseurl: "/My-Portfolio"
 
 sass:
   sass_dir: ./css
