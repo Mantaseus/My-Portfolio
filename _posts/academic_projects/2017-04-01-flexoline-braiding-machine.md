@@ -48,6 +48,8 @@ I worked on this project within a team of 3 other people: Marla McFee, Nadine Ma
 ### Basic Operation of the Braiding Machine
 Through experimental testing and data analysis, we determined the relationship between braiding angles, tension forces and the resulting braid quality. Our solution is a braiding machine that maintains a constant angle while controlling the tension with spring-based tensioners and top end rollers. It uses a carrier-disk system to move the live ends, stored in tubes, in a figure 8 pattern around a track. This motion creates a braid that is then pulled up through the top end rollers as it is completed.
 
+{% include content-img.html num="2" url="/assets/content-img/flexoline-braiding-machine/machine.jpg" caption="The major features of the Flexo Line Braiding Machine" width="100%" %}
+
 {% include embed-youtube.html id="VqbesQRAHdo" %}
 
 ### Initial Research and Conceptualization

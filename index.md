@@ -14,6 +14,16 @@ feature_from_top: true
 
 
 skills_list:
+  - type: Mechanical Engineering
+    color: '#ff9900'
+    skills:
+    - Thermodynamics
+    - Fluid Dynamics
+    - Solid Mechanics
+    - Kinematics
+    - Dimension Toleracing
+    - Mechanical Failure Analysis
+    - Fatigue Failure
   - type: Programming Languages
     color: '#ff9900'
     skills: 
